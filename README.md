@@ -71,7 +71,7 @@ docker run -d \
   ziobombo/privoxy
 ```
 
-*Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
+*Alternatively, you can use the sample [docker-compose.yml](docker-compose.yaml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
 
 ## Usage
 
