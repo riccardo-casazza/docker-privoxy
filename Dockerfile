@@ -1,5 +1,19 @@
-FROM alpine
-RUN apk add --no-cache privoxy
-RUN sed -i "s|^listen-address.*|listen-address 0.0.0.0:8118|g" /etc/privoxy/config
+FROM lsiobase/alpine:3.9
+LABEL maintainer="Riccardo Casazza <riccardo.casazza@gmail.com>"
+
+# environment variables
+ENV CONFIG_DIR=/config
+
+#install
+RUN echo "**** install runtime packages ****"
+RUN apk add --no-cache \
+	ca-certificates \
+    privoxy
+
+# add local files
+COPY root /
+
+#ports
 EXPOSE 8118
-ENTRYPOINT ["/usr/sbin/privoxy", "--no-daemon", "--user", "privoxy", "/etc/privoxy/config"] 
+VOLUME [ "/config" ]
+
