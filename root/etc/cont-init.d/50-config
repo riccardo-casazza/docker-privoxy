@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+
+echo "**** configure privoxy ****"
+cp -rf /etc/privoxy/* /config
+sed -i "s|^listen-address.*|listen-address 0.0.0.0:8118|g" /config/config
+sed -i "s|^confdir.*|confdir /config|g" /config/config

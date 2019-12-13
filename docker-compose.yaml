@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  privoxy:
+    image: ziobombo/privoxy:latest
+    container_name: privoxy
+    environment:
+        - PUID=502
+        - PGID=20
+        - TZ=Europe/Paris
+    ports:
+      - 8118:8118
+    volumes:
+      - /Users/rcasazza/config:/config
+    restart: always
+
